@@ -1,0 +1,413 @@
+/* EduShield AI: Academic, 14-Week Labs, Revision, Readiness Gate & Lecturer Cohort UI */
+
+.demo-banner {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #f8fafc;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-left: 4px solid #3b82f6;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.demo-badge-pill {
+  background: #3b82f6;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.demo-switcher-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.demo-switcher-btn {
+  font-size: 12px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #e2e8f0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.demo-switcher-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-color: #93c5fd;
+}
+
+.demo-switcher-btn.active {
+  background: #2563eb;
+  border-color: #60a5fa;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 14-Week Curriculum Matrix */
+.weeks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.week-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.week-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.06);
+  border-color: #cbd5e1;
+}
+
+.week-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.week-num-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.week-status-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.week-status-tag.passed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.week-status-tag.completed {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.week-status-tag.missing {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.week-status-tag.failed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.week-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 8px 0;
+  line-height: 1.35;
+}
+
+.week-card-meta {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.score-pills {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.score-pill {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.score-pill strong {
+  color: #1e293b;
+}
+
+/* Modal and Quiz Runner */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.modal-dialog.large-dialog {
+  max-width: 840px;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.quiz-question-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.quiz-question-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quiz-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quiz-option-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13.5px;
+  transition: all 0.1s ease;
+}
+
+.quiz-option-label:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.quiz-option-label.selected {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  font-weight: 500;
+}
+
+.flashcard-interactive {
+  background: #ffffff;
+  border: 2px dashed #93c5fd;
+  border-radius: 8px;
+  padding: 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.flashcard-interactive:hover {
+  background: #eff6ff;
+}
+
+/* Revision Pack Accordion */
+.revision-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.revision-week-item {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.revision-week-header {
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: #fafaf9;
+  font-weight: 600;
+  user-select: none;
+}
+
+.revision-week-header:hover {
+  background: #f4f4f2;
+}
+
+.revision-week-body {
+  padding: 16px 18px;
+  border-top: 1px solid var(--line);
+  background: #ffffff;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.concept-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.concept-tag {
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* Weakness Recommendations Card */
+.weakness-card {
+  background: #fff;
+  border: 1px solid #fed7aa;
+  border-left: 4px solid #f97316;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.weakness-card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #9a3412;
+  margin-bottom: 6px;
+}
+
+.weakness-stat-badge {
+  background: #ffedd5;
+  color: #c2410c;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+/* Readiness Gate Banner */
+.gate-banner {
+  padding: 18px 22px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.gate-banner.locked {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+}
+
+.gate-banner.unlocked {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #166534;
+}
+
+.gate-banner.eligible {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border: 2px solid #10b981;
+  color: #065f46;
+}
+
+.eligibility-certificate {
+  background: #ffffff;
+  border: 2px dashed #10b981;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 16px;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.1);
+}
+
+.eligibility-badge-icon {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+/* Lecturer Cohort Roster Table */
+.cohort-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.cohort-filter-btn {
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  cursor: pointer;
+}
+
+.cohort-filter-btn.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.status-dot.green { background: #10b981; }
+.status-dot.yellow { background: #f59e0b; }
+.status-dot.red { background: #ef4444; }
+.status-dot.gray { background: #94a3b8; }

@@ -1,0 +1,27 @@
+.env
+.env.*
+.env.local
+
+# Python
+backend/venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Chroma DB & Local Storage
+backend/chroma_db/
+chroma_db/
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+*.log
+build_out*.txt
+backend/soc_test_out.txt
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
